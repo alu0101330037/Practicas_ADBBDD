@@ -1,4 +1,6 @@
 # Contenido del repositorio
+## Carpeta Informe
+Contiene el informe de la práctica
 ## Carpeta Imagenes
 Contiene las capturas de pantalla solicitadas
 ## Carpeta Modelos
