@@ -36,21 +36,3 @@ def average():
             return {'average': avg}
     else:
         return {'ERROR': 'Unable to connect to database'}
-
-@app.route('/min/')
-def average():
-    conn = get_db_connection()
-    if conn != None:
-        cur = conn.cursor()
-        try:
-            cur.execute('SELECT MIN(AVG(Tiempo)) AS minimun_average '
-                        'FROM Participantes'
-                        'GROUP BY C_carrera')
-        except psycopg2.Error as err:
-            print('Error:', err)
-            return {'ERRORCODE': err.pgcode, 'ERROR': err.diag.message_primary}
-        else:
-            minavg = cur.fetchone()[0]
-            return {'minimun_average': minavg}
-    else:
-        return {'ERROR': 'Unable to connect to database'}
